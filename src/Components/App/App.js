@@ -7,7 +7,7 @@ import SearchResults from '../SearchResults/SearchResults';
 class App extends React.Component {
   constructor(props){
     super(props)
-    this.state.searchResults=[
+    this.state = {searchResults: [
       {
         name: "Savior",
         artist: "Rise Against",
@@ -21,7 +21,7 @@ class App extends React.Component {
         artist: "Rise Against",
         album: "The Sufferer and The Witness"
       }
-    ]
+    ]}
   }
   render() {
     return (
