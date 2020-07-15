@@ -6,35 +6,48 @@ import SearchResults from '../SearchResults/SearchResults';
 
 class App extends React.Component {
   constructor(props){
-    super(props)
+    super(props);
     this.state = {searchResults: [
       {
         name: "Savior",
         artist: "Rise Against",
-        album: "Appeal to Reason"
+        album: "Appeal to Reason",
+        id: 1
       }, {
         name: "Satellite",
         artist: "Rise Against",
-        album: "Endgame"
+        album: "Endgame",
+        id: 2
       }, {
         name: "Prayer of the Refugee",
         artist: "Rise Against",
-        album: "The Sufferer and The Witness"
+        album: "The Sufferer and The Witness",
+        id: 3
       }],
       playlistName: "test",
       playlistTracks: [{
         name: "Black Market",
         artist: "Rise Against",
         album: "Black Market",
-        id: 1
+        id: 4
       }, {
         name: "Tragedy + Time",
         artist: "Rise Against",
         album: "Black Market",
-        id: 1
+        id: 5
       }]
-     }
+     };
+    this.addTrack = this.addTrack.bind(this);
   }
+
+  addTrack(track){
+    this.state.playlistTracks.map(playlistTrack => {
+      if (playlistTrack.id != track.id) {
+        this.state.playlistTracks.push(track)
+      }
+    })
+  }
+
   render() {
     return (
     <div>
