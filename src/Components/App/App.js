@@ -45,8 +45,7 @@ class App extends React.Component {
       return;
   } else {
       this.state.playlistTracks.unshift(track);
-      let newState = this.state;
-      this.setState({playlistTracks: newState.playlistTracks});
+      this.setState(this.state);
     }
   }
   render() {
