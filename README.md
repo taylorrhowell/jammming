@@ -21,7 +21,7 @@ This project was a capstone project for the Front-End Developer course at [Codec
 * JavaScript
 
 ## Setup
-The site is live [here](julmango-jam.surge.sh).
+The site is live [here](www.julmango-jam.surge.sh).
 
 ## Code Examples
 Show examples of usage:
