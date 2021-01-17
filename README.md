@@ -13,7 +13,7 @@
 This project was a capstone project for the Front-End Developer course at [Codecademy](https://www.codecademy.com). The entire application is made up of components that pass information to each other in the form of props. The images are provided by [Codecademy](https://www.codecademy.com).
 
 ## Screenshot
-![Image of the Search Bar, Search Results, and Playlist](ProjectScreenshot.png)
+![Image of the Search Bar, Search Results, and Playlist](ProjectImage.png)
 
 ## Technologies
 * React
