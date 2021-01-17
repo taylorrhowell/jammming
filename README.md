@@ -1,68 +1,65 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# jammming
+> jammming is a Single Page Application (SPA) created with React, CSS3, and JavaScript. It was done using an outline from [Codecademy](https://www.codecademy.com). The website renders an application that hooks into the [Spotify Web API](https://developer.spotify.com/documentation/web-api/) to authenticate users, search for tracks, and save new playlists to a user's Spotify profile.
 
-## Available Scripts
+## Table of Contents
+* [General Info](#general-info)
+* [Screenshot and Instructions](#screenshot-and-instructions)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Features](#features)
+* [Status](#status)
 
-In the project directory, you can run:
+## General Info
+This project was a capstone project for the Front-End Developer course at [Codecademy](https://www.codecademy.com). The entire application is made up of components that pass information to each other in the form of props. The images are provided by [Codecademy](https://www.codecademy.com).
 
-### `npm start`
+## Screenshot
+![Image of the Search Bar, Search Results, and Playlist](ProjectScreenshot.png)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies
+* React
+* CSS3
+* JavaScript
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Setup
+The site is live [here](julmango-jam.surge.sh).
 
-### `npm test`
+## Code Examples
+Show examples of usage:
+```javascript
+class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      searchResults: [],
+      playlistName: "My Playlist",
+      playlistTracks: []
+     };
+     
+    this.addTrack = this.addTrack.bind(this);
+    this.removeTrack = this.removeTrack.bind(this);
+    this.updatePlaylistName = this.updatePlaylistName.bind(this);
+    this.savePlaylist = this.savePlaylist.bind(this);
+    this.search = this.search.bind(this);
+  }
+```
+```javascript
+class TrackList extends React.Component {
+    render() {
+        return (
+            <div className='TrackList'>
+                {this.props.tracks.map(track => {
+                    return <Track key={track.id} track={track} isRemoval={this.props.isRemoval} onAdd={this.props.onAdd} onRemove={this.props.onRemove}/>
+                })}
+            </div>
+        )
+    }
+}
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
+* A Single Page Application (SPA) that doesn't need to reload the page to update information
+* Authentication handled by Spotify for a secure connection
+* Constructed using stateful and stateless components for easy debugging, scaling, and readability.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Status
+Project is: _finished_. If any updates are made, they will be cosmetic or refactoring changes.
